@@ -40,13 +40,13 @@
 
     <h3 th:if="${results}"><span th:text="${results.size()}"/> Result(s)</h3>
 
-    <div th:replace="fragments :: search-results"></div>
-;
+    <!--<div th:replace="fragments :: search-results"></div>-->
 
-    <table th:each="search-results : ${results}">
-        <tr th:each entry : ${entry}" >
-            <td th:text="${field.key}"></td>
-            <td th:text="${field.value}"></td>
+
+    <table class="job-listing" th:each="job : ${results}">
+        <tr th:each="entry : ${job.entrySet()}" >
+            <td th:text="${entry.getKey()}"></td>
+            <td th:text="${entry.getValue()}"></td>
         </tr>
     </table>
 </div>
