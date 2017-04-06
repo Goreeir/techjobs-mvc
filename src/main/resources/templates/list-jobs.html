@@ -12,6 +12,9 @@
 
     <!-- TODO #3 - Use the same list display from search.html -->
 
+    <h3><span th:text="${jobs.size()}"/> Result(s)</h3>
+
+    <div th:replace="fragments :: search-results"></div>
 </div>
 
 </body>
